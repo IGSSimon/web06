@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立科技高中─校園社團介紹網</title>
+    <style>
+        #main {
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            /* background: lightblue; */
+        }
+
+        #top {
+            width: 1000px;
+            height: 65px;
+            margin: auto;
+            /* background: lightcoral; */
+        }
+
+        #left {
+            width: 215px;
+            /* +、-、*、/ 左右兩側要半形空白 */
+            height: calc(768px - 65px - 20px);
+            float: left;
+            /* 對齊 top 區，(1024-1000)/2=12 */
+            margin-left: 12px;
+            /* background-color: antiquewhite; */
+        }
+
+        #menu {
+            width: 215px;
+            height: calc(768px - 65px - 20px - 25px);
+            /* background-color: lightgoldenrodyellow; */
+        }
+
+        #menu div {
+            font-family: "標楷體";
+            font-size: 24px;
+            color: #ff00ff;
+            font-weight: 500;
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        #menu td {
+            width: 215px;
+
+            /* 圖的高度是 35px ，設 40px 兩兩之間有間隔是會比較好看 */
+            height: 40px;
+            text-align: center;
+            font-family: "標楷體";
+            font-size: 16px;
+            color: #000000;
+            background: url("./images/menu1.png") no-repeat center;
+        }
+
+        #menu td:hover {
+            background: url("./images/menu2.png") no-repeat center;
+        }
+
+        /* 考試時這個可以不做 */
+        /* 讓 整個區塊都有 a 的作用 */
+        #menu a {
+            display: block;
+            line-height: 40px;
+        }
+
+        #update {
+            width: 215px;
+            height: 25px;
+            font-family: "標楷體";
+            color: #000000;
+            text-align: center;
+            font-size: 16px;
+            /* background-color: blue; */
+        }
+
+        #right {
+            width: 770px;
+            height: calc(768px - 65px - 20px);
+            float: right;
+            margin-right: 12px;
+            /* background-color: lightgreen; */
+        }
+
+        marquee {
+            width: 770px;
+            height: 29px;
+            /* background-color: red; */
+            /* marquee 下面會有幽靈空白，下 vertical-align: middle 指令可以清除 */
+            /* 考試可以不寫，每個區塊都下背景顏色才會發現 */
+            vertical-align: middle;
+            font-family: "標楷體";
+            font-size: 24px;
+            color: #0000ff;
+        }
+
+        iframe {
+            width: 770px;
+            height: calc(768px - 65px - 29px - 20px);
+            /* background-color: black; */
+        }
+
+        #footer {
+            width: 1000px;
+            height: 20px;
+            margin: auto;
+            clear: both;
+            font-family: "標楷體";
+            color: #000000;
+            text-align: center;
+            font-size: 16px;
+            /* background-color: yellow; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="top">
+            <!-- alt 替代文字，資源連結有錯時顯示的文字 -->
+            <!-- title 圖片標題文字，滑鼠移上去會顯示的文字 -->
+            <a href="./index.html"><img src="./images/logo.png" alt="國立科技高中校園社團介紹網" title="國立科技高中校園社團介紹網"></a>
+        </div>
+        <!-- 創建一個left區塊，放menu區跟update區 -->
+        <div id="left">
+            <div id="menu">
+                <div>社團介紹</div>
+                <!-- table>tr*6>td -->
+                <table>
+                    <tr>
+                        <!-- target 要跟下面的 name 一致 -->
+                        <td><a href="./guitar_history.html" target="myiframe">吉他社</a></td>
+                    </tr>
+                    <tr>
+                        <td>熱舞社</td>
+                    </tr>
+                    <tr>
+                        <td>棒球社</td>
+                    </tr>
+                    <tr>
+                        <td>羽球社</td>
+                    </tr>
+                    <tr>
+                        <td>足球社</td>
+                    </tr>
+                    <tr>
+                        <td>童軍社</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="update">最近更新日期：2026/11/27</div>
+        </div>
+        <!-- 創建一個right區塊，放content(iframe)區跟跑馬燈區 -->
+        <div id="right">
+            <marquee behavior="" direction="">歡迎光臨校園社團介紹網，參觀後請支持社團活 動並熱烈參與</marquee>
+            <!-- 用 iframe 來做 content -->
+            <!-- name 要跟上面的 target 一致 -->
+            <iframe src="./main.html" frameborder="0" name="myiframe"></iframe>
+        </div>
+        <div id="footer">網頁設計及維護：00xxx</div>
+    </div>
+</body>
+
+</html>
